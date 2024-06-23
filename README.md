@@ -33,7 +33,43 @@ Welcome to **DataSmiths**, a comprehensive end-to-end machine learning pipeline 
 
 To use **DataSmiths**, clone the repository and install the required dependencies:
 
-```bash
 git clone https://github.com/yourusername/DataSmiths.git
 cd DataSmiths
 pip install -r requirements.txt
+
+## Usage
+
+import data_collection as dc
+
+# Load data from a CSV file
+csv_data = dc.load_csv('Dataset.csv')
+
+# Load data from an Excel file
+excel_data = dc.load_excel('Book1.xlsx', sheet_name='Sheet1')
+
+# Load data from a SQL database
+sql_data = dc.load_sql('sqlite:///path_to_your_db.db', 'SELECT * FROM my_table')
+
+## Data Report
+
+import data_report as dr
+
+# Generate data report for a CSV file
+dr.generate_data_report('Dataset.csv')
+
+## Data Processing
+
+import data_processing as dp
+
+# Clean and transform the selected dataset
+cleaned_data = dp.clean_data(selected_data)
+transformed_data = dp.transform_data(cleaned_data)
+
+Modules
+data_collection.py: Functions for loading data from different sources.
+data_report.py: Functions for generating detailed reports of the dataset.
+data_processing.py: Functions for cleaning and processing the data.
+main.py: Main script to run the pipeline.
+Contributing
+We welcome contributions to DataSmiths! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
+
